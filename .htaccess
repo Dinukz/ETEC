@@ -1,0 +1,60 @@
+# ============================================================================
+#  ETEC — ROOT .htaccess   (upload to the SAME folder as artisan / composer.json)
+# ============================================================================
+#
+#  Written 2026-09-30. On the live host the Laravel PROJECT folder is the web
+#  root, so without this file:
+#
+#    * https://etecbusiness.lk/            answered 403 Forbidden — the site only
+#      worked at /public/, and Google had no homepage to index. That is why
+#      searching "etecbusiness" found nothing.
+#
+#    * every file in the project folder was downloadable, including .env
+#      (database password, mail password, APP_KEY), composer.json, and any
+#      .sql / .zip backup left next to them. Verified from outside: both
+#      /composer.json and /.editorconfig were served.
+#
+#  What this does: every request is answered by public/ — the only folder
+#  Laravel ever meant to be public — so the address is https://etecbusiness.lk/
+#  with no /public, and nothing else in this folder can be reached at all.
+# ============================================================================
+
+# Never list a folder's contents.
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # 1. SSL renewal must still reach its own files (Let's Encrypt / hPanel).
+    RewriteRule ^\.well-known/ - [L]
+
+    # 2. Old addresses and Google's existing copies: /public/anything  ->  /anything
+    #    A permanent (301) move, so search engines transfer the page to the
+    #    clean address. GET/HEAD only: a form posted from a page that was
+    #    loaded before this change must still land, not be bounced as a GET.
+    #    THE_REQUEST is the browser's original request line, so the internal
+    #    hand-off in rule 3 can never trigger this again (no redirect loop).
+    RewriteCond %{REQUEST_METHOD} ^(GET|HEAD)$
+    RewriteCond %{THE_REQUEST} \s/public/([^\s?]*) [NC]
+    RewriteRule ^ /%1 [R=301,L,NE]
+
+    # 3. Already inside public/ (a POST from an old page, or a local copy served
+    #    from a subfolder like localhost/ETEC/public/) — let it straight through.
+    #    Matched on the path RELATIVE to this folder, not on REQUEST_URI, so it
+    #    is right both at the domain root and in a subfolder; an absolute
+    #    "^/public/" test sent a local copy to public/public/... and broke it.
+    RewriteRule ^public/ - [L]
+
+    # 4. Everything else is answered by public/. Laravel's own public/.htaccess
+    #    takes it from there, exactly as it did at /public/.
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+# Belt and braces, in case mod_rewrite is ever switched off: refuse the files
+# that must never be served, whatever happens to the rules above.
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+<FilesMatch "(?i)\.(env|sql|zip|tar|gz|log|bak|md|lock|bat|sh)$|^(composer\.json|package\.json|phpunit\.xml|artisan|vite\.config\.js|database-schema\.txt)$">
+    Require all denied
+</FilesMatch>

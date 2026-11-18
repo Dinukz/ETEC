@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing MCQ - Explanations UI</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #e8eaed;
+        }
+
+        .quiz-container {
+            width: 100%;
+            max-width: 800px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container" id="quiz">
+    <!-- Quiz content gets injected here via JS -->
+</div>
+
+<script>
+    const questions = [
+        {
+            id: 1,
+            text: "සාම්ප්‍රදායික අලෙවිකරණය (Outbound Marketing) සහ ඩිජිටල් අලෙවිකරණය (Inbound Marketing) අතර ඇති ප්‍රධාන වෙනසක් පහත දැක්වෙන ඒවායින් කුමක්ද?",
+            options: [
+                { id: "A", text: "Outbound මගින් SEO භාවිත කරන අතර Inbound මගින් රූපවාහිනී දැන්වීම් භාවිත කරයි.", isCorrect: false, explanation: "මෙම පිළිතුරෙන් සංකල්ප දෙක මාරු කර දක්වා ඇත. SEO යනු Inbound Marketing ක්‍රමයක් වන අතර රූපවාහිනී දැන්වීම් Outbound Marketing වලට අයත් වේ." },
+                { id: "B", text: "Outbound සඳහා අන්තර්ජාලය අත්‍යවශ්‍ය වන අතර Inbound සඳහා එය අවශ්‍ය නොවේ.", isCorrect: false, explanation: "සාම්ප්‍රදායික අලෙවිකරණයට අන්තර්ජාලය අත්‍යවශ්‍ය නොවන අතර ඩිජිටල් අලෙවිකරණය සඳහා එය අත්‍යවශ්‍ය වේ." },
+                { id: "C", text: "Outbound මගින් ඉලක්කගත ප්‍රේක්ෂකයා හඳුනා ගැනීම පහසු වන අතර Inbound මගින් එය අපහසුය.", isCorrect: false, explanation: "ඩිජිටල් අලෙවිකරණයේදී (Inbound) ඉලක්කගත ප්‍රේක්ෂකයා හඳුනා ගැනීම ඉතා පහසුය." },
+                { id: "D", text: "Outbound මගින් පාරිභෝගිකයාට බලපෑම් කරන අතර Inbound මගින් පාරිභෝගිකයාට විසඳුම් සපයයි.", isCorrect: true, explanation: "Inbound Marketing හිදී පාරිභෝගිකයාගේ ගැටලුවලට විසඳුම් සපයන අන්තර්ගතයන් හරහා ඔවුන්ව ස්වභාවිකව ආකර්ෂණය කරගන්නා අතර, Outbound Marketing හිදී රූපවාහිනී හෝ පුවත්පත් දැන්වීම් මගින් ඔවුන්ගේ අවධානය බලහත්කාරයෙන් ලබා ගැනීමට උත්සාහ කරයි." }
+            ],
+            hint: "ධීවරයින් දෙදෙනාගේ කතාවේ දැල විසි කරන ධීවරයා සහ ඇමක් දමන ධීවරයා ක්‍රියා කළ ආකාරය මතක් කරගන්න."
+        },
+        {
+            id: 2,
+            text: "ඩිජිටල් අලෙවිකරණයේදී ZMOT (Zero Moment of Truth) යන්නෙන් අදහස් වන්නේ කුමක්ද?",
+            options: [
+                { id: "A", text: "පාරිභෝගිකයෙකු භාණ්ඩයක් සෘජුවම වෙළඳසැලෙන් මිලදී ගන්නා අවස්ථාව.", isCorrect: false, explanation: "මෙය First Moment of Truth (FMOT) අදියර ලෙස සැලකිය හැක. ZMOT යනු ඊට පෙර අදියරයි." },
+                { id: "B", text: "රූපවාහිනී දැන්වීමක් හරහා භාණ්ඩයක් ගැන පළමුවෙන්ම දැනගන්නා අවස්ථාව.", isCorrect: false, explanation: "මෙය උත්තේජනයක් (Stimulus) ලැබෙන අවස්ථාව මිස තොරතුරු සොයා බලන ZMOT අවස්ථාව නොවේ." },
+                { id: "C", text: "භාණ්ඩයක් මිලදී ගැනීමට පෙර අන්තර්ජාලයේ තොරතුරු සහ Reviews සෙවීම.", isCorrect: true, explanation: "ZMOT යනු පාරිභෝගිකයෙකු භාණ්ඩයක් මිලදී ගැනීමට තීරණය කිරීමට පෙර, අන්තර්ජාලය හරහා ඒ පිළිබඳව තොරතුරු, ප්‍රතිචාර (Reviews) සහ ශ්‍රේණිගත කිරීම් හොයා බලන තීරණාත්මක අවස්ථාවයි." },
+                { id: "D", text: "මිලදී ගත් භාණ්ඩයක් පිළිබඳව පාරිභෝගිකයා සමාජ මාධ්‍යවල අදහස් පළ කිරීම.", isCorrect: false, explanation: "මෙය මිලදී ගැනීමෙන් පසුව සිදු කරන ක්‍රියාවකි (Second Moment of Truth)." }
+            ],
+            hint: "Google සමාගම විසින් ලෝකයට හඳුන්වා දුන් \"Zero Moment...\" සංකල්පය ගැන මතක් කරගන්න."
+        },
+        {
+            id: 3,
+            text: "AIDA ආකෘතියේ (Model) පියවර 4 නිවැරදිව පෙළගස්වා ඇති පිළිතුර කුමක්ද?",
+            options: [
+                { id: "A", text: "Attention, Interest, Desire, Action", isCorrect: true, explanation: "පාරිභෝගිකයාගේ අවධානය දිනාගැනීමේ සිට මිලදී ගැනීම දක්වා පියවර 4 මෙමගින් නිවැරදිව නිරූපණය වේ." },
+                { id: "B", text: "Action, Interest, Desire, Attention", isCorrect: false, explanation: "Action (මිලදී ගැනීම) යනු අවසාන පියවරයි, පළමු පියවර නොවේ." },
+                { id: "C", text: "Attention, Information, Decision, Action", isCorrect: false, explanation: "I සහ D අකුරු වලින් අදහස් වන්නේ Information සහ Decision නොව, Interest සහ Desire යන්නයි." },
+                { id: "D", text: "Awareness, Interest, Decision, Action", isCorrect: false, explanation: "නිවැරදි ආකෘතිය වන්නේ Attention, Interest, Desire, Action යන්නයි." }
+            ],
+            hint: "පළමු 'A' අකුරින් \"අවධානය (Attention)\" ත්, අවසන් 'A' අකුරින් \"මිලදී ගැනීමේ ක්‍රියාව (Action)\" ත් අදහස් වේ."
+        },
+        {
+            id: 4,
+            text: "Sales Funnel එකක TOFU (Top of Funnel) අදියරේදී භාවිතා කිරීමට වඩාත්ම සුදුසු අන්තර්ගතය (Content) කුමක්ද?",
+            options: [
+                { id: "A", text: "වට්ටම් සහ දීමනා (Discounts and Offers)", isCorrect: false, explanation: "වට්ටම් සහ දීමනා ලබා දෙන්නේ Funnel එකේ අවසානයේ (BOFU) මිලදී ගැනීමකට යොමු කිරීමටයි." },
+                { id: "B", text: "පාරිභෝගික අත්දැකීම් (Case Studies)", isCorrect: false, explanation: "පාරිභෝගික අත්දැකීම් භාවිතා කරන්නේ විශ්වාසය ගොඩනැගීමට MOFU අදියරේදීය." },
+                { id: "C", text: "අධ්‍යාපනික වීඩියෝ සහ Viral Videos", isCorrect: true, explanation: "TOFU අදියරේ ප්‍රධාන අරමුණ ව්‍යාපාරය ගැන නොදන්නා අයට හඳුන්වා දීම බැවින්, වැඩි පිරිසක් ආකර්ෂණය කරගන්නා මෙවැනි Content වඩාත් සුදුසු වේ." },
+                { id: "D", text: "නොමිලේ අත්හදා බැලීම් (Free Trials)", isCorrect: false, explanation: "මෙය BOFU අදියර සඳහා භාවිතා කරන ක්‍රමයකි." }
+            ],
+            hint: "TOFU කියන්නේ Funnel එකේ මුල්ම අවස්ථාවයි. මෙහිදී අපි ව්‍යාපාරය ගැන නොදන්නා අයට අපිව හඳුන්වා දිය යුතුයි."
+        },
+        {
+            id: 5,
+            text: "Buyer Persona එකක් නිර්මාණය කිරීමේ ප්‍රධාන අරමුණ කුමක්ද?",
+            options: [
+                { id: "A", text: "භාණ්ඩයේ මිල තීරණය කිරීම", isCorrect: false, explanation: "Buyer Persona එකක් භාවිතා කරන්නේ මිල නියම කිරීමට වඩා අලෙවිකරණ ඉලක්ක සපුරා ගැනීමටයි." },
+                { id: "B", text: "ව්‍යාපාරයේ ලාභය ගණනය කිරීම", isCorrect: false, explanation: "ලාභ ගණනය කිරීමට මෙම ආකෘතිය සම්බන්ධයක් නොමැත." },
+                { id: "C", text: "තරඟකරුවන්ගේ දුර්වලතා හඳුනා ගැනීම", isCorrect: false, explanation: "මෙය තරඟකරුවන් විශ්ලේෂණය කිරීමක් මිස පාරිභෝගික ආකෘතියක් නොවේ." },
+                { id: "D", text: "ඉලක්කගත පාරිභෝගිකයාගේ වයස, රුචිකත්වයන් සහ ගැටලු නිශ්චිතව හඳුනා ගැනීම", isCorrect: true, explanation: "සාර්ථක අලෙවිකරණයක් සඳහා දැන්වීම් නිර්මාණය කිරීමට පෙර, අපගේ සැබෑ පාරිභෝගිකයා කවුරුන්දැයි නිශ්චිතවම හඳුනාගැනීම මේ හරහා සිදු කෙරේ." }
+            ],
+            hint: "ඩිජිටල් අලෙවිකරණයේ රන් රීතිය වන \"හැමෝටම බඩු විකුණන්න හැදුවොත්, කාටවත්ම විකුණන්න වෙන්නේ නැහැ\" යන්න මතක් කරගන්න."
+        }
+    ];
+
+    const svgCross = `<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
+    const svgCheck = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+
+    function renderQuiz() {
+        const container = document.getElementById('quiz');
+        let html = '';
+
+        questions.forEach((q, qIndex) => {
+            html += `
+                <div class="question-block" id="q${q.id}">
+                    <div class="q-label">Question ${q.id}</div>
+                    <div class="q-text">${q.text}</div>
+                </div>
+            `;
+        });
+
+        container.innerHTML = html;
+    }
+
+    renderQuiz();
+</script>
+
+</body>
+</html>

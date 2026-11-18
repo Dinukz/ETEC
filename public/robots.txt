@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+# Every public page, generated from the live courses and posts.
+Sitemap: https://etecbusiness.lk/sitemap.xml

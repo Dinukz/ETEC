@@ -1,0 +1,43 @@
+Introduction to AI & Prompting — LESSON 02
+දෙවන දේශනය (Session 02) - බහුවරණ ප්‍රශ්නාවලිය
+පහත දැක්වෙන සෑම ප්‍රශ්නයක් සඳහාම වඩාත් නිවැරදි පිළිතුර තෝරන්න.
+
+1. "Garbage In, Garbage Out" යන සංකල්පයෙන් Prompt Engineering හිදී අදහස් වන්නේ කුමක්ද?
+A. AI යන්ත්‍රය සෑම විටම වැරදි පිළිතුරු ලබා දෙන බව.
+B. පරිගණකයට වැරදි හෝ දුර්වල උපදෙස් ලබා දුන් විට, ලැබෙන ප්‍රතිඵලය ද දුර්වල වන බව.
+C. AI භාවිතා කිරීමෙන් ව්‍යාපාරයේ කුණු කසළ කළමනාකරණය කළ හැකි බව.
+D. තොරතුරු සෙවීමේදී (Information Retrieval) අනවශ්‍ය දත්ත ඉවත් කිරීමේ ක්‍රියාවලිය.
+Answer: B
+Explanation: Prompt Engineering යනු වචන හරහා පරිගණකයට උපදෙස් දීමයි. එහිදී ඔබ ලබා දෙන උපදෙස (Prompt) දුර්වල නම් (Garbage In), ඔබට ලැබෙන ප්‍රතිඵලයත් දුර්වල (Garbage Out) වේ.
+
+2. CTF(T) Framework හි අඩංගු වන ප්‍රධාන අංග 4 නිවැරදිව දක්වා ඇති පිළිතුර කුමක්ද?
+A. Content, Target, Focus, Time
+B. Context, Task, Format, Tone
+C. Concept, Title, Form, Theme
+D. Create, Test, Finalize, Track
+Answer: B
+Explanation: සාර්ථක Prompt එකක් සඳහා අනිවාර්යයෙන්ම Context (පසුබිම් කතාව), Task (විය යුතු කාර්යය), Format (ආකෘතිය) සහ Tone (භාෂා ශෛලිය) යන අංග 4 ඇතුළත් විය යුතුය.
+
+3. AI වෙත කිසිදු පූර්ව ආදර්ශයක් (Example) හෝ උදාහරණයක් ලබා නොදී සෘජුවම ප්‍රශ්නයක් ඇසීම හඳුන්වන්නේ කෙසේද?
+A. Zero-shot Prompting
+B. Few-shot Prompting
+C. Role-playing
+D. Information Retrieval
+Answer: A
+Explanation: AI යන්ත්‍රයකට කිසිදු ආදර්ශයක් හෝ පෙර උදාහරණයක් නොදී කෙලින්ම උපදෙස් ලබා දීමේ ක්‍රමවේදය Zero-shot Prompting ලෙස හැඳින්වේ.
+
+4. "ඔබ වසර 10ක පළපුරුද්දක් ඇති Digital Marketer කෙනෙකු ලෙස ක්‍රියා කරන්න (Act as a...)" යනුවෙන් AI ට උපදෙස් දීම අයත් වන්නේ කුමන තාක්ෂණයටද?
+A. Zero-shot Prompting
+B. Few-shot Prompting
+C. Content Calendar Planning
+D. Role-playing
+Answer: D
+Explanation: AI වෙත විශේෂඥයෙකුගේ හෝ වෙනත් චරිතයක භූමිකාවක් (Role) ලබා දී, එම කෝණයෙන් පිළිතුරු ලබා ගැනීම Role-playing තාක්ෂණයයි.
+
+5. සාර්ථක ඩිජිටල් අලෙවිකරුවෙකු "Random posting" (අහඹු ලෙස පෝස්ට් කිරීම) වෙනුවට මාසයක් සඳහා භාවිතා කළ යුත්තේ කුමක්ද?
+A. ඩිජිටල් අලෙවිකරණ ඒජන්සියක් මිලදී ගැනීම.
+B. දින 30ක අලෙවිකරණ සැලසුමක් සහ Content Calendar එකක්.
+C. රූපවාහිනී දැන්වීම් පමණක් භාවිතා කිරීම.
+D. AI මගින් සාදන ලද එකම පෝස්ට් එක දිනපතා පළ කිරීම.
+Answer: B
+Explanation: ගෙයක් සෑදීමට සැලසුමක් අවශ්‍ය වන්නා සේම, සාර්ථක අලෙවිකරණයක් සඳහා දින 30 තුළ පළ කරන පෝස්ට් මොනවාදැයි පෙන්වන නිශ්චිත සැලැස්මක් (Content Calendar) අනිවාර්යයෙන්ම තිබිය යුතුය.

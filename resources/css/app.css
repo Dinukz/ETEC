@@ -1,0 +1,158 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+        'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* Brand palette — ETEC blue/indigo */
+    --color-brand-50: #eef4ff;
+    --color-brand-100: #d9e6ff;
+    --color-brand-200: #bcd3ff;
+    --color-brand-300: #8eb6ff;
+    --color-brand-400: #598dff;
+    --color-brand-500: #3363ff;
+    --color-brand-600: #1d40f5;
+    --color-brand-700: #162fe1;
+    --color-brand-800: #1829b6;
+    --color-brand-900: #1a298f;
+    --color-brand-950: #141a57;
+
+    --color-accent-400: #fbbf24;
+    --color-accent-500: #f59e0b;
+    --color-accent-600: #d97706;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Light: blue/yellow on white · Dark: blue/yellow on black */
+    body {
+        @apply bg-white text-slate-800 antialiased dark:text-slate-200;
+    }
+    .dark body,
+    body.dark {
+        background-color: #000000;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        @apply bg-transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        @apply rounded-full bg-slate-300 dark:bg-slate-700;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-slate-400 dark:bg-slate-600;
+    }
+}
+
+@utility btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold
+        transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500
+        focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60
+        dark:focus-visible:ring-offset-slate-950;
+}
+@utility btn-primary {
+    @apply btn bg-brand-600 text-white shadow-sm hover:bg-brand-700 active:scale-[0.98];
+}
+@utility btn-secondary {
+    @apply btn border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 active:scale-[0.98]
+        dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700;
+}
+@utility btn-ghost {
+    @apply btn text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800;
+}
+@utility btn-accent {
+    @apply btn bg-accent-500 text-slate-900 shadow-sm hover:bg-accent-400 active:scale-[0.98];
+}
+
+@utility card {
+    @apply rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900;
+}
+
+@utility input {
+    @apply w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-800
+        placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30
+        dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:placeholder:text-slate-500;
+}
+@utility label {
+    @apply mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300;
+}
+
+@utility badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium;
+}
+
+@utility container-app {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+/* ---------------------------------------------------------------------------
+   Public-site entrance animations (2026-09-02)
+
+   Deliberately CSS-only and tiny: elements start faded and slightly low, and a
+   small IntersectionObserver in the public layout adds .is-visible when they
+   scroll into view. No library, no layout shift, and nothing to load.
+
+   ⚠️ THE NO-JS / NO-OBSERVER PATH MUST SHOW THE CONTENT. The observer adds the
+   class; if it never runs (script blocked, old browser, a crawler), the
+   .reveal rule alone would leave the whole page invisible. So the hidden state
+   is applied by `html.js .reveal` — the `js` class is set by the same inline
+   script — and a page without it renders fully visible and unanimated.
+
+   ⚠️ prefers-reduced-motion is honoured: everything appears at once, no
+   movement. Vestibular disorders are not an edge case worth a nicer fade.
+--------------------------------------------------------------------------- */
+html.js .reveal {
+    opacity: 0;
+    transform: translateY(1.25rem);
+}
+
+html.js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Stagger children of a row without hand-writing a delay on each one. */
+html.js .reveal-d1.is-visible { transition-delay: 0.09s; }
+html.js .reveal-d2.is-visible { transition-delay: 0.18s; }
+html.js .reveal-d3.is-visible { transition-delay: 0.27s; }
+
+/* A slow drift on the hero photo, so a still image does not feel dead. */
+@keyframes etec-kenburns {
+    from { transform: scale(1.06); }
+    to   { transform: scale(1.14); }
+}
+
+.animate-kenburns {
+    animation: etec-kenburns 22s ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html.js .reveal,
+    html.js .reveal.is-visible {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .animate-kenburns {
+        animation: none;
+    }
+}
